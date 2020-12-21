@@ -1,0 +1,30 @@
+{
+  "name": "codeshop",
+  "version": "1.0.0",
+  "description": "MERN shop",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fsjorgeluis/codeshop.git"
+  },
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node shopAPI/server.js",
+    "server": "nodemon shopAPI/server",
+    "client": "npm start --prefix shop",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Jorge Fernandez",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
