@@ -5,7 +5,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/fsjorgeluis/codeshop.git"
+    "url": "https://github.com/fsjorgeluis/codeshop.git"
   },
   "main": "server.js",
   "type": "module",
@@ -13,14 +13,18 @@
     "start": "node shopAPI/server.js",
     "server": "nodemon shopAPI/server",
     "client": "npm start --prefix shop",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node shopAPI/seeder",
+    "data:destroy": "node shopAPI/seeder -d"
   },
   "author": "Jorge Fernandez",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "mongoose": "^5.11.8"
   },
   "devDependencies": {
