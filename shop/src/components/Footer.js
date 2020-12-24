@@ -12,7 +12,7 @@ const Footer = () => {
                 </Row>
             </Container>
         </footer>
-    )
+    );
 }
 
 export default Footer;

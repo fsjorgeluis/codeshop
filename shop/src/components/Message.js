@@ -6,7 +6,7 @@ const Message = ({ variant, children }) => {
         <Alert variant={variant}>
             {children}
         </Alert>
-    )
+    );
 }
 
 Message.defaultProps = {
