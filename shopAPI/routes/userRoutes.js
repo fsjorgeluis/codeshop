@@ -6,7 +6,7 @@ import {
     registerUser,
     getUserProfile,
     updateUserProfile
-} from '../controllers/userControllers.js';
+} from '../controllers/userController.js';
 
 const router = express.Router();
 
