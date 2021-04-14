@@ -3,7 +3,7 @@ import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
 
 // @desc    Create new Order
-// @route   POST /api/order
+// @route   POST /api/orders
 // @access  private
 const addOrder = asyncHandler(async (req, res) => {
     const {
@@ -37,6 +37,23 @@ const addOrder = asyncHandler(async (req, res) => {
     }
 });
 
+// @desc    Get order by id
+// @route   POST /api/orders/:id
+// @access  private
+const getOrderById = asyncHandler(async (req, res) => {
+    const { params: { id } } = req;
+    const order = await Order.findById({ _id: id })
+        .populate('user', 'name email');
+
+    if (order) {
+        res.json(order);
+    } else {
+        res.status(404);
+        throw new Error('Order not found!');
+    }
+});
+
 export {
-    addOrder
+    addOrder,
+    getOrderById
 };
